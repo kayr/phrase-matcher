@@ -3,7 +3,7 @@
 
     <groupId>secondstring</groupId>
     <artifactId>secondstring</artifactId>
-    <version>1.0</version>
+    <version>1.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>secondstring</name>
@@ -49,10 +49,11 @@
     </repositories>
 
     <scm>
-        <connection>scm:git:file://localhost/${basedir}</connection>
-        <developerConnection>scm:git:file://localhost/${basedir}</developerConnection>
+        <connection>scm:git:file://localhost/C:\var\code\prsnl\secondstring</connection>
+        <developerConnection>scm:git:file://localhost/C:\var\code\prsnl\secondstring</developerConnection>
         <url>https://trac.openxdata.org/browser/J2ME/trunk</url>
-    </scm>
+      <tag>HEAD</tag>
+  </scm>
 
     <distributionManagement>
         <repository>
