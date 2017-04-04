@@ -15,7 +15,7 @@ plugins {
     id 'net.researchgate.release' version '2.3.5'
 }
 
-apply plugin: 'java'
+apply plugin: 'groovy'
 apply plugin: 'maven'
 
 group = 'com.omnitech'
