@@ -45,7 +45,7 @@ class PhraseHelper {
             def f = compare(s1, phrase)
             if (f >= best)
                 anyAboveBest = true
-            return (f == Float.NaN || f < best) ? -1 : f
+            return (Float.isNaN(f) || f < best) ? -1.toFloat() : f.toFloat()
         }
         return anyAboveBest ? rt : null
 
