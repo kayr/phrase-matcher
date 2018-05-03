@@ -1,4 +1,4 @@
-package com.github.kayr.phrasehelper;
+package com.github.kayr.phrasematcher;
 
 import com.wcohen.ss.BasicStringWrapper;
 import com.wcohen.ss.BasicStringWrapperIterator;
@@ -10,7 +10,7 @@ import com.wcohen.ss.tokens.SimpleTokenizer;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PhraseHelper2 {
+public class PhraseMatcher {
 
     public static final double DEFAULT_MIN_SCORE = 0.7;
     SoftTFIDF    distance;
@@ -20,7 +20,7 @@ public class PhraseHelper2 {
         return distance;
     }
 
-    private PhraseHelper2 setDistance(SoftTFIDF distance) {
+    private PhraseMatcher setDistance(SoftTFIDF distance) {
         this.distance = distance;
         return this;
     }
@@ -29,12 +29,12 @@ public class PhraseHelper2 {
         return phrases;
     }
 
-    private PhraseHelper2 setPhrases(List<String> phrases) {
+    private PhraseMatcher setPhrases(List<String> phrases) {
         this.phrases = phrases;
         return this;
     }
 
-    public static PhraseHelper2 train(List<String> words) {
+    public static PhraseMatcher train(List<String> words) {
 
         // create a SoftTFIDF distance learner
         SimpleTokenizer tokenizer = new SimpleTokenizer(false, true);
@@ -56,7 +56,7 @@ public class PhraseHelper2 {
         distance.prepare(new BasicStringWrapperIterator(wrappers.iterator()));
         distance.train(new BasicStringWrapperIterator(wrappers.iterator()));
 
-        return new PhraseHelper2().setDistance(distance).setPhrases(words);
+        return new PhraseMatcher().setDistance(distance).setPhrases(words);
     }
 
     public double compare(String s1, String s2) {
